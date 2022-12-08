@@ -1,0 +1,33 @@
+
+#FROM ubuntu:20.04
+
+FROM stratumproject/tofino-model:latest-9.9.0 
+
+ENV SDE_VERSION=9.9.0
+
+ADD ./bf-sde-${SDE_VERSION}-install.tgz /
+
+#ENV SDE_VERSION=9.9.0
+#ENV BLD_HOME=/root
+#ENV SDE_TAR=bf-sde-${SDE_VERSION}.tgz
+#ENV SDE_PREFIX=bf-sde-${SDE_VERSION}
+#ENV SDE_INSTALL=/root/bf-sde/install
+#ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:${SDE_INSTALL}/bin
+
+#ADD bf-sde/${SDE_TAR} ${BLD_HOME}/ 
+
+#ADD bf-sde/bf-sde-${SDE_VERSION}-install.tgz ${SDE_INSTALL}/
+
+#RUN apt install -y python3-packaging
+
+#WORKDIR ${BLD_HOME}/${SDE_PREFIX}/p4studio
+
+#RUN ./install-p4studio-dependencies.sh
+
+#RUN ./p4studio profile apply --jobs 4 ./profiles/all-tofino.yaml
+
+#ENTRYPOINT []
+
+#CMD ["/bin/bash"]
+
+

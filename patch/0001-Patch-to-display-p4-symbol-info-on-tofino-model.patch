@@ -1,0 +1,25 @@
+From e80525eb2be7e58b94aa016f9373f45c7e1038b5 Mon Sep 17 00:00:00 2001
+From: squid_ro <squid_ro@accton.com>
+Date: Thu, 8 Dec 2022 03:26:33 +0000
+Subject: [PATCH] Patch to display p4 symbol info on tofino-model.
+
+---
+ stratum/hal/lib/barefoot/bf_sde_wrapper.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/stratum/hal/lib/barefoot/bf_sde_wrapper.cc b/stratum/hal/lib/barefoot/bf_sde_wrapper.cc
+index 1e6a94c..fd8354b 100644
+--- a/stratum/hal/lib/barefoot/bf_sde_wrapper.cc
++++ b/stratum/hal/lib/barefoot/bf_sde_wrapper.cc
+@@ -1739,7 +1739,7 @@ std::string BfSdeWrapper::GetSdeVersion() const {
+   auto switchd_main_ctx = absl::make_unique<bf_switchd_context_t>();
+   switchd_main_ctx->install_dir = strdup(sde_install_path.c_str());
+   switchd_main_ctx->conf_file = strdup(sde_config_file.c_str());
+-  switchd_main_ctx->skip_p4 = true;
++  switchd_main_ctx->skip_p4 = false;
+   if (run_in_background) {
+     switchd_main_ctx->running_in_background = true;
+   } else {
+-- 
+2.7.4
+
