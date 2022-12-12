@@ -12,7 +12,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:${SDE_INST
 
 #ADD bf-sde/${SDE_TAR} ${BLD_HOME}/ 
 
-ADD bf-sde/bf-sde-${SDE_VERSION}-install.tgz ${SDE_INSTALL}/
+ADD ./bf-sde-${SDE_VERSION}-install.tgz ${SDE_INSTALL}/
 
 RUN apt install -y python3-packaging
 
